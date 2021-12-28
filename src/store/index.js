@@ -13,6 +13,9 @@ export default createStore({
     decreaseCounter(state, randomNumber) {
       state.counter -= randomNumber;
     },
+    setColorCode(state, newValue) {
+      state.colorCode = newValue;
+    },
   },
   actions: {
     increaseCounter({ commit }) {
@@ -29,6 +32,9 @@ export default createStore({
       ).then((response) => {
         commit("decreaseCounter", response.data);
       });
+    },
+    setColorCode({ commit }, newValue) {
+      commit("setColorCode", newValue);
     },
   },
   getters: {

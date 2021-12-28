@@ -21,6 +21,16 @@
 <script>
 export default {
   name: "Home",
+  computed: {
+    colorCode: {
+      get() {
+        return this.$store.state.colorCode;
+      },
+      set(newValue) {
+        this.$store.dispatch("setColorCode", newValue);
+      },
+    },
+  },
 };
 </script>
 
